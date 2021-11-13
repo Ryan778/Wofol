@@ -1,0 +1,115 @@
+/* base.scss
+ * (C) 2021 Ryan Zhang
+*/
+
+// Font setup
+$font-head: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+$font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// Backgrounds
+$background: linear-gradient(45deg, #232230, #1b1a29); 
+$box-background: #1d1d25; 
+
+// Text colors
+$primary-color: #fff;
+$link-color: #82c3ee;
+$link-color-hover: scale-color($link-color, $lightness: 20%); 
+
+::selection {
+  background-color: rgba($link-color, 0.6);
+}
+
+html {
+  background: $box-background; // For overscroll
+  height: 100%;
+}
+
+h1, h2 {
+  font: 100% $font-head;
+  font-weight: 700;
+}
+
+h3, h4, h5, h6 {
+  font: 100% $font-head;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 1.2rem 0 0.6rem;
+}
+
+h2 {
+  font-size: 1.8rem; 
+  margin: 1.0rem 0 0.5rem;
+}
+
+h3 {
+  font-size: 1.6rem; 
+  margin: 0.8rem 0 0.3rem;
+}
+
+h4 {
+  font-size: 1.4rem; 
+  margin: 0.8rem 0 0.2rem;
+}
+
+h5 {
+  font-size: 1.2rem; 
+  margin: 0.6rem 0 0.2rem;
+}
+
+h6 {
+  font-size: 1.0rem; 
+  margin: 0.4rem 0 0.2rem;
+}
+
+p {
+  font-size: 1.0rem;
+  margin: 0.2rem 0;
+}
+
+a {
+  color: $link-color; 
+  text-decoration: none;
+}
+
+a:hover {
+  color: $link-color-hover;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+  background: rgba($link-color, 0.3);
+}
+
+body {
+  font: 100% $font-body;
+  color: $primary-color;
+}
+
+pre {
+  padding: 4px 6px;
+}
+
+#_base-section {
+  margin: auto;
+  padding-top: 1.2rem;
+  max-width: 1200px;
+}
+
+#_base-container {
+  background: $box-background;
+  padding: 0.6rem 1.2rem 0.8rem;
+}
+
+#_base-bk {
+  position: fixed;
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%;
+  background: $background;
+  z-index: -1;
+}
