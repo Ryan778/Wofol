@@ -1,0 +1,24 @@
+@import 'variables'; 
+
+#_base-bk {
+  background-image: url('/bk/portfolio.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#_base-header {
+  position: absolute;
+  top: 0; 
+  width: 100%; 
+  height: 48px;
+  padding: 6px 12px;
+  background: rgba($box-background, 0.9);
+  box-sizing: border-box;
+}
+
+#_base-container {
+  margin-top: 48px;
+  background: rgba($box-background, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem 1.2rem 0.8rem;
+}

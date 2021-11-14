@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
+{% block base_head %}
+<link rel='stylesheet' href='/portfolio.css'/>
+{% endblock base_head %}
+
+{% block base_outer %}
+<div id='_base-header'>
+  <p><a href='..'>Go Back</a></p>
+</div>
+{% endblock base_outer %}
+
 {% block base %}
-<p><a href='..'>Go Back</a></p>
 <div id='_base-container'>
   {% block content %} {% endblock %}
 </div>
