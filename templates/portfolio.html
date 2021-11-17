@@ -1,12 +1,17 @@
 {% extends "page.html" %}
 
 {% block content %}
-  <h1 class="title">
-    {{ section.title }}
-  </h1>
-  <ul>
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
-</ul>
+  <h1 class='title'>{{ section.title }}</h1>
+  <div id='portfolio-grid-outer'>
+    {% for page in section.pages %}
+    <a href='{{ page.permalink | safe }}'>
+      <div class='portfolio-grid-item'>
+        <div class='portfolio-grid-inner'>
+          <p>{{ page.title }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <script src='/js/plugins/3dCards.js'></script>
 {% endblock content %}
