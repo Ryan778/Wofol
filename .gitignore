@@ -1,2 +1,4 @@
 # Ignore build artifacts
 public
+
+zola.exe
