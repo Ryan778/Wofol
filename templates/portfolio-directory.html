@@ -1,0 +1,15 @@
+{% extends "page.html" %}
+
+{% block content %}
+  <h1 class="title">
+    {{ section.title }}
+  </h1>
+  <p>
+  </p>
+  <ul>
+  {% for subsection in section.subsections %}
+    {% set section = get_section(path=subsection) %}
+    <li><a href='{{ section.permalink }}'>{{ section.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock content %}

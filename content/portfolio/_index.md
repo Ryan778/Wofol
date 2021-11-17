@@ -1,6 +1,5 @@
 +++
-title = "List of portfolio entries"
+title = "List of Portfolios"
 sort_by = "date"
-template = "portfolio.html"
-page_template = "portfolio-entry.html"
+template = "portfolio-directory.html"
 +++
