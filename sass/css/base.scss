@@ -101,3 +101,46 @@ pre {
   background: $background;
   z-index: -1;
 }
+
+// Details panes
+details {
+  margin: 0 auto ;
+  background: rgba($box-background, 0.5);
+  margin-bottom: .5rem;
+  overflow: hidden;
+}
+
+summary {
+  padding: 0.6rem;
+  display: block;
+  border-bottom: 1px solid $primary-color;
+  padding-left: 1.8rem;
+  position: relative;
+  cursor: pointer;
+}
+
+summary:before {
+  content: '';
+  border-width: .4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  top: 1.0rem;
+  left: 0.8rem;
+  transform: rotate(0);
+  transform-origin: .2rem 50%;
+  transition: .24s transform ease;
+}
+
+details[open] > summary:before {
+  transform: rotate(90deg);
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+details > div {
+  padding: 0.6rem;
+  margin-bottom: 0;
+}
