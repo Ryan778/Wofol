@@ -5,3 +5,4 @@ static/processed_images
 # Ignore Zola binaries
 zola.exe
 zola0.13.exe
+zola0.14.exe

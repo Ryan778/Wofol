@@ -1,0 +1,89 @@
+.musicWrapper-nolib {
+  display: none;
+}
+
+.musicWrapper {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 6px 3px 3px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.16s;
+  border: 1px solid transparent;
+  color: inherit;
+  font-size: 18px;
+  user-select: none;
+}
+
+.musicWrapper > span {
+  margin-right: 6px;
+  vertical-align: bottom;
+}
+
+.musicWrapper:hover {
+  background: rgba(255, 255, 255, 0.24);  
+}
+
+.musicWrapper:focus {
+  outline: none; 
+  border-color: #fff;
+}
+
+.musicWrapper:active {
+  background: rgba(255, 255, 255, 0.36  );  
+}
+
+/* Music Player */
+#musicWrapper-player {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0px;
+  width: 100%; 
+  height: 50px;
+  padding: 8px 6px 6px;
+  cursor: default;
+  user-select: none;
+  text-align: center;
+}
+
+#musicWrapper-controls {
+  float: left;
+}
+
+#musicWrapper-controls span {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#musicWrapper-pb {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 4px;
+  cursor: pointer;
+  transition: all 0.16s;
+}
+
+#musicWrapper-pb:hover {
+  top: -4px;
+  height: 8px;
+}
+
+#musicWrapper-pb div {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0px;
+  width: 0%; 
+  height: 100%;
+  transition: width 0.1s linear;
+}
+
+#musicWrapper-trackName {
+  text-align: center;
+}
+
+#musicWrapper-position {
+  float: right;
+}

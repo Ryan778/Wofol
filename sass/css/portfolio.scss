@@ -63,6 +63,26 @@
   box-sizing: border-box;
 }
 
+// Plugin backgrounds and base styling
+
+.musicWrapper {
+  font-family: $font-head;
+}
+
+#musicWrapper-player {
+  background: darken(rgba($box-background, 0.4), 20%);
+  backdrop-filter: blur(4px);
+}
+
+#musicWrapper-pb {
+  background: darken(rgba($primary-color, 0.9), 40%);
+  backdrop-filter: blur(4px);
+}
+
+#musicWrapper-pb div {
+  background: rgba($accent-color, 0.9);
+}
+
 @media screen and (max-width: 960px) {
   #portfolio-grid-outer {
     grid-template-columns: repeat(2, 1fr);
