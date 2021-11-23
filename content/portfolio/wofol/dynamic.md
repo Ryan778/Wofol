@@ -69,6 +69,12 @@ Separate images/multimedia/anything else by categories.
 ## Lightbox
 Generate quick, simple, and interactable galleries of images.
 
-{{ resize_image(path="@/portfolio/wofol/example-1.jpg", width=600, height=400, op="fill") }}
+<!-- {{ resize_image(path="@/portfolio/wofol/example-1.jpg", width=600, height=400, op="fill") }} -->
+
+<a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
+
+{{ lightbox(path="https://images.unsplash.com/photo-1637672531763-7b7a63b3269b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80") }}
+
+{{ lightbox(path="../example-1.jpg") }}
 
 {{ gallery() }}
