@@ -1,1 +1,1 @@
-<audio class='musicWrapper-nolib' controls data-name='{{name}}' src='{{src}}'></audio>
+<audio {% if id %}id='{{id}}' {% endif %}class='musicWrapper-nolib' controls data-name='{{name}}'{% if bk %} data-bk='{{bk}}'{% endif %}{% if hue %} data-hue='{{hue}}'{% endif %} src='{{src}}'></audio>

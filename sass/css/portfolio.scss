@@ -79,10 +79,6 @@
   backdrop-filter: blur(4px);
 }
 
-#musicWrapper-pb div {
-  background: rgba($accent-color, 0.9);
-}
-
 @media screen and (max-width: 960px) {
   #portfolio-grid-outer {
     grid-template-columns: repeat(2, 1fr);
@@ -98,6 +94,6 @@
 @media screen and (min-width: 1201px) {
   #_base-section {
     padding-top: 64px;
-    padding-bottom: 32px;
+    padding-bottom: 48px;
   }
 }
