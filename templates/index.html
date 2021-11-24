@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 
 {% block base %}
-<h1 class='title'>
-  This is my portfolio made with Zola.
-</h1>
+<style>
+  #img-header {
+    display: block; 
+    margin: auto; 
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-height: 240px;
+  }
 
-<p>Click <a href='/portfolio/'>here</a> to see what I've made.</p>
+  #_base-section {
+    padding: 12px;
+  }
+
+  button {
+    width: 240px;
+  }
+</style>
+
+<img id='img-header' src='images/wofol-logo.png' alt='Wofol Logo'/>
+
+<br/>
+
+<p><b>Wofol</b> (<i>woe-foe</i>) (a portmanteau of "web portfolio") is a highly customizable, interactive portfolio template. </p>
+<p>Wofol natively supports: </p>
+<ul>
+  <li>Writing portfolio entires in Markdown with minimal code</li>
+  <li>The flexibility to still add HTML/CSS/JS directly for complete customizability</li>
+  <li>Lightbox images and inline music players</li>
+</ul>
+
+<a href='/portfolio/wofol' tabindex='-1'><button>Documentation + Examples</button></a>
+<br/>
+<a href='/portfolio/demo' tabindex='-1'><button>Sample Portfolio Pages</button></a>
 {% endblock base %}

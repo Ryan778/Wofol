@@ -70,8 +70,6 @@ Separate images/multimedia/anything else by categories.
 
 Generate quick, simple, and interactable galleries of images.
 
-<!-- {{ resize_image(path="@/portfolio/wofol/example-1.jpg", width=600, height=400, op="fill") }} -->
-
 ### Samples
 Aspect ratio is preserved in the first two images, 1:1 aspect ratio is used for the second two.
 
@@ -89,9 +87,9 @@ A custom width/height can also be specified.
 *Note that if you specify width/height, the image will always be constrained by the lower of the two values.*
 
 ```md
-{{/* lightbox(path="../example-1.jpg") */}} <!-- No caption, keeping aspect ratio -->
-{{/* lightbox(path="../example-1.jpg", caption="Hello World!", square=1) */}} <!-- Caption + cropping to 1:1 -->
-{{/* lightbox(path="../example-3.jpg", fullwidth=1, height=480) */}} <!-- Use "fullwidth=1" to specify 100% width -->
+{{/* lightbox(path="example-1.jpg") */}} <!-- No caption, keeping aspect ratio -->
+{{/* lightbox(path="example-1.jpg", caption="Hello World!", square=1) */}} <!-- Caption + cropping to 1:1 -->
+{{/* lightbox(path="example-3.jpg", fullwidth=1, height=480) */}} <!-- Use "fullwidth=1" to specify 100% width -->
 ```
 
 <!-- {{ gallery() }} -->

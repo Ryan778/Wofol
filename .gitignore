@@ -2,6 +2,9 @@
 public
 static/processed_images
 
+# Ignore private asset storage
+.storage
+
 # Ignore Zola binaries
 zola.exe
 zola0.13.exe
