@@ -11,9 +11,10 @@ const MusicPlayer = {
   elements: {}, 
   visualizer: {
     active: false, 
-    audioContext: new AudioContext(), 
+    audioContext: false, 
     activate: function() {
-      if (!this.analyser) {
+      if (!this.analyser || !this.audioContext) {
+        this.audioContext = new AudioContext(); 
         this.src = this.audioContext.createMediaElementSource(MusicPlayer.audio); 
         this.analyser = this.audioContext.createAnalyser(); 
         this.analyser.connect(this.audioContext.destination); 

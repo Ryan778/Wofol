@@ -15,7 +15,7 @@ Plays music!
   - Built-in visualizer! (Customizable colors and background -- see below)
   - Also works as a static component -- if you call it without the CSS/JS files, it'll render as a native inline audio player
 
-#### Sample Tracks
+### Sample Tracks
 
 **A Tall Ship** and **In A World** by Jason Shaw
 
@@ -48,12 +48,12 @@ Plays music!
   }; 
 </script> 
 
-#### Sample Markdown
+### Example Markdown
 
 ```md
-{{/* musicPlayer(src="/music/ATallShip.mp3",name="A Tall Ship") */}} 
-{{/* musicPlayer(src="/music/InAWorld.mp3",name="In A World",bk="/bk/world.jpg",hue=240) */}} 
-{{/* musicPlayer(src="/music/SunsetBreeze.mp3",name="Sunset Breeze",bk="/bk/sunset.jpg",hue=30) */}} 
+{{/* musicPlayer(src="/music/ATallShip.mp3", name="A Tall Ship") */}} 
+{{/* musicPlayer(src="/music/InAWorld.mp3", name="In A World",bk="/bk/world.jpg", hue=240) */}} 
+{{/* musicPlayer(src="/music/SunsetBreeze.mp3", name="Sunset Breeze",bk="/bk/sunset.jpg", hue=30) */}} 
 ```
 
 ## Gallery
@@ -67,14 +67,31 @@ Separate images/multimedia/anything else by categories.
   - Separate final product images and mockups/drafts
 
 ## Lightbox
+
 Generate quick, simple, and interactable galleries of images.
 
 <!-- {{ resize_image(path="@/portfolio/wofol/example-1.jpg", width=600, height=400, op="fill") }} -->
 
-<a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
+### Samples
+Aspect ratio is preserved in the first two images, 1:1 aspect ratio is used for the second two.
 
-{{ lightbox(path="https://images.unsplash.com/photo-1637672531763-7b7a63b3269b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80") }}
+{{ lightbox(path="../example-1.jpg", caption="Tokyo, Japan | Gene Brutty") }}
+{{ lightbox(path="../example-2.jpg", caption="Ocean | Pawel Nolbert") }}
+{{ lightbox(path="../example-1.jpg", caption="Tokyo, Japan | Gene Brutty", square=1)}}
+{{ lightbox(path="../example-2.jpg", caption="Ocean | Pawel Nolbert", square=1) }}
 
-{{ lightbox(path="../example-1.jpg") }}
+A custom width/height can also be specified.
 
-{{ gallery() }}
+{{ lightbox(path="../example-3.jpg", caption="Tushar Mountains | Patrick Hendry", fullwidth=1, height=480) }}
+
+### Example Markdown
+
+*Note that if you specify width/height, the image will always be constrained by the lower of the two values.*
+
+```md
+{{/* lightbox(path="../example-1.jpg") */}} <!-- No caption, keeping aspect ratio -->
+{{/* lightbox(path="../example-1.jpg", caption="Hello World!", square=1) */}} <!-- Caption + cropping to 1:1 -->
+{{/* lightbox(path="../example-3.jpg", fullwidth=1, height=480) */}} <!-- Use "fullwidth=1" to specify 100% width -->
+```
+
+<!-- {{ gallery() }} -->

@@ -1,4 +1,18 @@
-<a href='{{path | safe}}' data-lightbox='lb2'>
-  Lightbox
-  <!-- <img src='{{path | safe}}'/> -->
+{% if not width %} 
+  {% set width=180 %}
+{% endif %}
+{% if not height %} 
+  {% set height=180 %}
+{% endif %}
+<a href='{{path | safe}}' data-lightbox='lb2'{% if caption %} data-title='{{caption}}'{% endif %}>
+  {% if square %}
+  <div class='lb-thumbnail' style='background-image: url("{{path | safe}}"); width: {{width}}px; height: {{height}}px'>
+    <div class='lb-thumbnail-inner'></div>
+  </div>
+  {% else %}
+  <div class='lb-thumbnail'>
+    <img src='{{path | safe}}' style='max-width: {% if fullwidth %}100%{% else %}{{width}}px{% endif %}; max-height: {{height}}px'/>
+    <div class='lb-thumbnail-inner'></div>
+  </div>
+  {% endif %}
 </a>
