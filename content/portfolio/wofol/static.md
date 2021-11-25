@@ -6,6 +6,8 @@ date = 2021-11-16
 Static features **do not** require JavaScript. Static components are implemented using only HTML and CSS!
 ## Styling
 ### Headers
+Each header is exponentially smaller than the previous header. 
+
 > # Heading 1
 > Some text
 > ## Heading 2

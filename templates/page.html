@@ -7,13 +7,15 @@
 {% endblock base_head %}
 
 {% block base_outer %}
-  <div id='_base-header'>
+  <!-- <div id='_base-header'>
     <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
-  </div>
+  </div> -->
 {% endblock base_outer %}
 
 {% block base %}
-  <div id='_base-container'>
+  <div id='_page-container'>
+    <div id='_page-headerbk'></div>
+    <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
     {% block content %} {% endblock %}
   </div>
 {% endblock base %}
