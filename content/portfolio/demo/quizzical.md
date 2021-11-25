@@ -1,5 +1,5 @@
 +++
-title = "Quizzical"
+title = "Quizzical (Coding Project)"
 date = 2021-07-05
 +++
 

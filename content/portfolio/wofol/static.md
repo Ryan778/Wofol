@@ -20,6 +20,12 @@ Each header is exponentially smaller than the previous header.
 > Look at all this text!
 > ###### Heading 6
 
+### Fonts
+The default typeface chosen follows the advice of *the best font is the one you don't notice*. This, however, can be easily changed by modifying the `base.html` and `base.scss` files.
+- Header font (page titles, headers): Source Sans Pro
+- Monospace font (code blocks): Source Code Pro
+- Body font (everything else): *OS-Defined Sans Serif Font*
+
 ### Font decorations
 Here's **some bold text**, *some italic text*, and ***some bold and italic text***.
 

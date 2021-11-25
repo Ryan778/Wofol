@@ -6,8 +6,8 @@
   #img-header {
     display: block; 
     margin: auto; 
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 48px;
+    padding-bottom: 32px;
     max-height: 240px;
   }
 
@@ -26,6 +26,9 @@
   }
 
   #landing-video {
+    background: #0f3057; 
+    background-image: url('images/landing-static.jpg');
+    background-position: center;
     position: absolute;
     left: 0; 
     top: 0;
@@ -57,28 +60,34 @@
     height: 28px;
   }
 
-  #landing-content > * {
+  #landing-content a {
     font-size: 1.2rem;
+    text-shadow: 2px 2px 4px #000;
   }
 
-  #landing-content a {
-    text-shadow: 2px 2px 4px #000;
+  #landing-content-inner {
+    background: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s, transform 1.2s;
   }
 
 </style>
 
 <div id='landing-top'>
-  <video id='landing-video' muted autoplay loop src='/videos/landing-bk.mp4'></video>
+  <video id='landing-video' muted loop playsinline></video>
   <div id='landing-content'>
     <img id='img-header' src='images/wofol-logo.png' alt='Wofol Logo'/>
     <br/>
   
-    <a href='/portfolio/wofol' tabindex='-1'><button><span class='material-icons'>description</span> Documentation + Examples</button></a>
-    <a href='/portfolio/demo' tabindex='-1'><button><span class='material-icons'>lightbulb</span> Sample Portfolio Pages</button></a>
+    <div id='landing-content-inner'>
+      <h3>Fast, modern, and interactive portfolios.</h3>
+      <a href='/portfolio/wofol' tabindex='-1'><button><span class='material-icons'>description</span> Documentation + Examples</button></a>
+      <a href='/portfolio/demo' tabindex='-1'><button><span class='material-icons'>lightbulb</span> Sample Portfolio Entries</button></a>
+      <br/>
+      <a href='#about'><span class='material-icons'>expand_more</span> Learn More</a>
+    </div>
     
-    <br/>
-
-    <a href='#about'><span class='material-icons'>expand_more</span> Learn More</a>
   </div>
 </div>
 {% endblock base_outer %}
@@ -89,20 +98,63 @@
   <h2>What (does it do)?</h2>
   <p>Wofol natively supports: </p>
   <ul>
+    <li>Hosting multiple (unlimited, actually) portfolios on one site</li>
+    <ul>
+      <li>i.e., separate your work portfolio from a personal art portfolio</li>
+    </ul>
     <li>Writing portfolio entires in Markdown with minimal code</li>
     <li>The flexibility to still add HTML/CSS/JS directly for complete customizability</li>
     <li>Lightbox images and inline music players</li>
+    <ul>
+      <li>The music player comes with a visualizer too! Try it out on the <a href='portfolio/wofol/dynamic/#music-player'>dynamic feature demonstration page</a>. </li>
+    </ul>
+    <li>Being fully responsive &ndash; works great on mobile, tablet, and desktop!</li>
   </ul>
 
   <h2>Why (should I use it)?</h2>
   <p>Wofol is targeted towards a very specific audience: technical users who want <i>complete flexibility</i> over their website, but <i>don't want to make a website from scratch</i>.</p>
   <p>The heart of Wofol is <a href='https://www.getzola.org/' target='_blank'>Zola</a>, a <a href='https://tera.netlify.app/' target='_blank'>Tera</a> based static site generator designed to turn simple, human-readable markdown into HTML. This is then combined with lots of CSS, JavaScript, and template files to turn said HTML into beautiful - and functional - portfolio pages. Minimal coding experience needed! </p>
+  <p>Also, it's completely free and open source. Always a good selling point.</p>
+  <ul>
+    <li>This means you can do almost anything you want, as long as you release me from any liability from this and keep the original license text accessible*.<br/><i>*Not legal advice, refer to the license document for more details.</i></li>
+  </ul>
 
   <h2>Where (can I see examples)?</h2>
   <p>Two "portfolios" have been created to showcase what Wofol has to offer: a feature demonstration/documentation one, and a mock "real portfolio" to show several possible use cases.</p>
   <ul>
-
+    <li><a href='portfolio/wofol/'>Feature Demonstration</a> (includes markdown docs and examples for each feature)</li>
+    <li><a href='portfolio/demo/'>Sample Portfolio Entries</a> (see what Wofol might look like as a coding portfolio, photography portfolio, or blogging platform!)</li>
+    <li><a href='portfolio/'>Portfolio List</a> (simple page listing the two links above &ndash; offered as an option if you want to separate your portfolios)</li>
   </ul>
 
-  <p>Landing video credits: <a href='https://pixabay.com/users/snrsteeve-16870568' target='_blank'>Steeve Gunness from Pixabay</a></p>
+  <h2>How (was this made)?</h2>
+  <p>Wofol was created in three weeks for the Mines' "Sporediggers" hackathon. </p>
+  <p>For more information on how Wofol came to be, <a href='https://github.com/Ryan778/Wofol' target='_blank'>check out the readme.md for Wofol on GitHub</a>.</p>
+
+  <h2>Credits</h2>
+  <p>Wolf Icon: <a href='https://www.flaticon.com/authors/icongeek26' target='_blank'>icongeek26 from Flaticon</a></p>
+  <p>Landing Video: <a href='https://pixabay.com/users/snrsteeve-16870568' target='_blank'>Steeve Gunness from Pixabay</a></p>
+
+  <noscript>
+    <style>
+      #landing-video {
+        display: none;
+      }
+      #landing-content {
+        background-image: url('images/landing-static.jpg');
+      }
+      #landing-content-inner {
+        transform: none; 
+        opacity: 1;
+      }
+    </style>
+  </noscript>
+  <script>
+    document.getElementById('landing-video').src = `videos/landing-bk-${window.innerWidth/window.innerHeight > 1 ? 'wide':'tall'}.mp4`;
+    window.addEventListener('load', () => {
+      document.getElementById('landing-content-inner').style.transform = 'none'; 
+      document.getElementById('landing-content-inner').style.opacity = '1'; 
+      document.getElementById('landing-video').play();
+    });
+  </script>
 {% endblock base %}

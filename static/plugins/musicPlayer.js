@@ -49,7 +49,7 @@ const MusicPlayer = {
         window.requestAnimationFrame(() => {MusicPlayer.visualizer.animationFrame()}); 
         this.analyser.getByteFrequencyData(this.data); 
         let hueBase = MusicPlayer.currentElement.dataset.hue ? parseInt(MusicPlayer.currentElement.dataset.hue) : 225; 
-        let trData = this.data.slice(0, -1 * Math.floor(this.data.length / 4)); // Highest pitches are often not used
+        let trData = this.data.slice(0, -1 * Math.floor(this.data.length * 0.3)); // Highest pitches are often not used
         let canvas = MusicPlayer.elements.canvas; 
         let ctx = canvas.getContext('2d');
 
