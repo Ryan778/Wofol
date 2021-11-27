@@ -73,14 +73,14 @@ Generate quick, simple, and interactable galleries of images.
 ### Samples
 Aspect ratio is preserved in the first two images, 1:1 aspect ratio is used for the second two.
 
-{{ lightbox(path="../example-1.jpg", caption="Tokyo, Japan | Gene Brutty") }}
-{{ lightbox(path="../example-2.jpg", caption="Ocean | Pawel Nolbert") }}
-{{ lightbox(path="../example-1.jpg", caption="Tokyo, Japan | Gene Brutty", square=1)}}
-{{ lightbox(path="../example-2.jpg", caption="Ocean | Pawel Nolbert", square=1) }}
+{{ lightbox(path="example-1.jpg", caption="Tokyo, Japan | Gene Brutty") }}
+{{ lightbox(path="example-2.jpg", caption="Ocean | Pawel Nolbert") }}
+{{ lightbox(path="example-1.jpg", caption="Tokyo, Japan | Gene Brutty", square=1)}}
+{{ lightbox(path="example-2.jpg", caption="Ocean | Pawel Nolbert", square=1) }}
 
 A custom width/height can also be specified.
 
-{{ lightbox(path="../example-3.jpg", caption="Tushar Mountains | Patrick Hendry", fullwidth=1, height=480) }}
+{{ lightbox(path="example-3.jpg", caption="Tushar Mountains | Patrick Hendry", fullwidth=1, height=480) }}
 
 ### Example Markdown
 
