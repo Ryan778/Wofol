@@ -1,5 +1,56 @@
 {% extends "page.html" %}
 
+{% block page_outer %}
+<div id='_page-sticky'>
+  <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a> {% if page.toc %}<a id='_page-toc-a' href='#' style='float: right'><span class="material-icons">list</span> TOC</a>{% endif %}</p>
+</div>
+{% if page.toc %}
+  <div id='_page-toc'>
+    <p><b>Table of Contents</b></p>
+    <ul>
+      <li><a class='_page-toc-item' href='#' onclick='window.scrollTo(0, 0)'>Go to Top</a></li>
+      {% for h1 in page.toc %}
+        <li>
+            <a class='_page-toc-item' href='{{ h1.permalink | safe }}'>{{ h1.title }}</a>
+            {% if h1.children %}
+              <ul>
+                {% for h2 in h1.children %}
+                  <li>
+                    <a class='_page-toc-item' href='{{ h2.permalink | safe }}'>{{ h2.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+  </div>
+  <script>
+    document.getElementById('_page-toc-a').addEventListener('click', (e) => {
+      e.preventDefault(); 
+      let toc = document.getElementById('_page-toc'); 
+      if (toc.style.display === 'block') {
+        toc.style.display = 'none'; 
+      } else {
+        toc.style.display = 'block'; 
+      }
+    });
+    document.querySelectorAll('._page-toc-item').forEach((ele) => {
+      let toc = document.getElementById('_page-toc'); 
+      ele.addEventListener('click', (e) => {
+        e.preventDefault();
+        let hash = ele.href.slice(ele.href.lastIndexOf('#'));
+        location.hash = hash.slice(1); 
+        toc.style.display = 'none'; 
+        let target = document.querySelector(hash); 
+        window.scrollTo(0, target.offsetTop + 24);
+      });
+    });
+  </script>
+{% endif %}
+{% endblock page_outer %}
+
 {% block content %}
+
 {{ page.content | safe }}
 {% endblock content %}

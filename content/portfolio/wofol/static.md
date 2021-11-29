@@ -1,5 +1,6 @@
 +++
 title = "Static Feature Demonstration"
+description = "Features and components that don't use any JS"
 date = 2021-11-16
 
 [extra] 
@@ -23,17 +24,17 @@ Note that this is **not required**. If you take a look at the [sample blog post]
 ### Content Headers
 Each header is exponentially smaller than the previous header. 
 
-> # Heading 1
+> <h1>Heading 1</h1>
 > Some text
-> ## Heading 2
+> <h2>Heading 2</h2>
 > Some more text
-> ### Heading 3
+> <h3>Heading 3</h3>
 > Here's some text
-> #### Heading 4
+> <h4>Heading 4</h4>
 > And more text
-> ##### Heading 5
+> <h5>Heading 5</h5>
 > Look at all this text!
-> ###### Heading 6
+> <h6>Heading 6</h6>
 
 ### Fonts
 The default typeface chosen follows the advice of *the best font is the one you don't notice*. This, however, can be easily changed by modifying the `base.html` and `base.scss` files.

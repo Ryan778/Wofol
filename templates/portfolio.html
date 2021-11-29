@@ -1,6 +1,7 @@
 {% extends "page.html" %}
 
 {% block content %}
+  <p><a href='..'><span class="material-icons">chevron_left</span>All Portfolios</a></p>
   <h1 class='title'>{{ section.title }}</h1>
   <div id='portfolio-grid-outer'>
     {% for page in section.pages %}

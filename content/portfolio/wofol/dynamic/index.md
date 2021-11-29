@@ -96,4 +96,14 @@ A custom width/height can also be specified.
 {{/* lightbox(path="example-3.jpg", fullwidth=1, height=480) */}} <!-- Use "fullwidth=1" to specify 100% width -->
 ```
 
-<!-- {{ gallery() }} -->
+## Table of Contents
+Always a useful tool for long pages. 
+- **Requirements**: No additional plugins needed, but does require JavaScript to function.
+- **Features**: 
+  - Generated completely automatically, requires no additional code from you!  
+    (based on the headers in your markdown file, top two levels only by default)
+  - Sticky popup that stays out of your way when not being used
+  - Scroll offset is automaticallly calculated to account for sticky header
+
+### Samples
+Look at the top right corner of your screen to see Table of Contents in action!
