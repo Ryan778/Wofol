@@ -7,16 +7,36 @@
 {% endblock base_head %}
 
 {% block base_outer %}
-  <!-- <div id='_base-header'>
-    <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
-  </div> -->
 {% endblock base_outer %}
 
 {% block base %}
-  <div id='_page-container'>
-    <div id='_page-headerbk'></div>
-    <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
-    {% block content %} {% endblock %}
+  <div id='_page-container-outer'>
+    {% if page.extra.header %}
+      <div id='_page-headerbk' style='background-image: url("{{ page.extra.header }}")'>
+        <div id='_page-headerbk-inner'>
+          <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
+          <div id='_page-headerbk-inner-footer'>
+            <h1 class="title">{{ page.title }}</h1>
+            <p class='subtitle'>
+            <b>{{ page.date }}</b>
+            {% if page.description %}
+              <br/><i>{{ page.description }}</i>
+            {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id='_page-container'>
+    {% elif page.title %}
+      <div id='_page-container'>
+      <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
+      <h1 class="title">{{ page.title }}</h1>
+    {% else %}
+      <div id='_page-container'>
+      <p><a href='..'><span class="material-icons">chevron_left</span>Go Back</a></p>
+    {% endif %}
+      {% block content %} {% endblock %}
+    </div>
   </div>
 {% endblock base %}
 

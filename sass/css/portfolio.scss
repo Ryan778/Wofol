@@ -21,10 +21,36 @@
   padding-top: 0px;
 }
 
-#_page-container {
+#_page-container-outer {
   background: rgba($box-background, 0.7);
   backdrop-filter: blur(12px);
+}
+
+#_page-container {
   padding: 0.6rem 1.2rem 0.8rem;
+}
+
+#_page-headerbk {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 240px;
+}
+
+#_page-headerbk-inner {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: #00000060;
+  padding: 0.6rem 1.2rem 0.8rem;
+}
+
+#_page-headerbk-inner-footer {
+  position: absolute;
+  bottom: 0;
 }
 
 #portfolio-grid-outer, .grid-outer {
@@ -41,27 +67,57 @@
 
 .portfolio-grid-item, .grid-item {
   display: block;
+  position: relative;
   grid-column: 1;
   grid-row: 1;
   // padding: 8px;
   width: 100%;
   height: 240px;
-  // border: 1px solid $primary-color;
+  // border: 1px solid transparent;
   background: rgba($primary-color, 0.1);
   transition: all 0.16s; 
 }
 
 .portfolio-grid-item:hover {
   transform: scale(1.03);
-  background: rgba($primary-color, 0.2);
+  // background: rgba($primary-color, 0.2);
 }
 
 // Inside the div box
-.portfolio-grid-inner {
+.portfolio-grid-item-inner {
+  height: 100%;
   width: 100%; 
-  height: 100%; 
   padding: 12px;
   box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  color: $primary-color;
+  display: flex;
+}
+
+.portfolio-grid-item-inner > div {
+  z-index: 2;
+  display: inline-block;
+  align-self: flex-end;
+  text-shadow: 2px 2px 4px #222;
+}
+
+.portfolio-grid-item-body {
+  color: rgba($primary-color, 0.7);
+}
+
+.portfolio-grid-item-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  z-index: 3;
+}
+
+.portfolio-fade-dark {
+  background: linear-gradient(to bottom, transparent, transparent 50%, #000000d0);
+  z-index: 1;
 }
 
 // Plugin backgrounds and base styling

@@ -6,9 +6,14 @@
     {% for page in section.pages %}
     <a href='{{ page.permalink | safe }}'>
       <div class='portfolio-grid-item'>
-        <div class='portfolio-grid-inner'>
-          <p>{{ page.title }}</p>
+        <div class='portfolio-grid-item-inner' {% if page.extra.header %}style='background-image: url("{{page.permalink}}{{page.extra.header}}")'{% endif %}>
+          <div>
+            <h3>{{ page.title }}</h3>
+            <p><i>{{ page.description }}</i></p>
+          </div>
         </div>
+        <div class='portfolio-grid-item-overlay portfolio-fade-dark'></div>
+        <div class='portfolio-grid-item-overlay'></div>
       </div>
     </a>
     {% endfor %}

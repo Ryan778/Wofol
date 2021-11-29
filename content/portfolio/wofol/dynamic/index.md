@@ -1,6 +1,10 @@
 +++
 title = "Dynamic Feature Demonstration"
+description = "Dynamic features in Wofol!"
 date = 2021-11-18
+
+[extra] 
+header = "header.jpg"
 +++
 
 Sometimes, you want something a little *fancier*. These components all continue to use the same simple and intuitive shortcodes markdown-wise, but behind the scenes use JavaScript "plugins" to work!
@@ -30,7 +34,7 @@ Plays music!
 *This track's recommended if you're trying out the visualizer!*
 
 *(Also intentionally low quality (96kpbs), please support the artist directly ([Youtube](https://www.youtube.com/watch?v=du1ds6lD8vk)/[Bandcamp](https://lockyn.me/track/sunset-breeze-2)) if you like it!)*
-{{ musicPlayer(src="/music/SunsetBreeze.mp3",name="Sunset Breeze",bk="/bk/sunset.jpg",hue=30) }}
+{{ musicPlayer(src="/music/SunsetBreeze.mp3", name="Sunset Breeze", bk="/bk/sunset.jpg",hue=30) }}
 
 **Want to try your own track?**
 
@@ -51,9 +55,9 @@ Plays music!
 ### Example Markdown
 
 ```md
-{{/* musicPlayer(src="/music/ATallShip.mp3", name="A Tall Ship") */}} 
-{{/* musicPlayer(src="/music/InAWorld.mp3", name="In A World",bk="/bk/world.jpg", hue=240) */}} 
-{{/* musicPlayer(src="/music/SunsetBreeze.mp3", name="Sunset Breeze",bk="/bk/sunset.jpg", hue=30) */}} 
+{{/* musicPlayer( src="/music/ATallShip.mp3", name="A Tall Ship" ) */}} 
+{{/* musicPlayer( src="/music/InAWorld.mp3", name="In A World",bk="/bk/world.jpg", hue=240) */}} 
+{{/* musicPlayer( src="/music/SunsetBreeze.mp3", name="Sunset Breeze", bk="/bk/sunset.jpg", hue=30) */}} 
 ```
 
 ## Gallery

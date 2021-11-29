@@ -1,11 +1,26 @@
 +++
 title = "Static Feature Demonstration"
 date = 2021-11-16
+
+[extra] 
+header = "../static.jpg"
 +++
 
 Static features **do not** require JavaScript. Static components are implemented using only HTML and CSS!
 ## Styling
-### Headers
+
+### Image Headers
+By adding the key `header` under `extra` in the page metadata, a header image can be specified for the post. This image will be used both on the portfolio entries list and in the page itself. 
+
+Example: 
+```md
+[extra] 
+header = "../static.jpg"
+```
+
+Note that this is **not required**. If you take a look at the [sample blog post](../../demo/blog-post/), you can see that it renders and looks just fine without the header photo. 
+
+### Content Headers
 Each header is exponentially smaller than the previous header. 
 
 > # Heading 1

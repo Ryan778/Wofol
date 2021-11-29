@@ -1,15 +1,30 @@
 {% extends "page.html" %}
 
 {% block content %}
+  <style>
+    ._portfolio-dir-entry {
+      border: 1px solid #ffffff; 
+      padding: 0 1rem 1rem;
+      margin-bottom: 1.2rem;
+      background: #0000004f;
+      
+    }
+    a._portfolio-dir-link {
+      text-decoration: none;
+    }
+  </style>
   <h1 class="title">
     {{ section.title }}
   </h1>
   <p>
   </p>
-  <ul>
   {% for subsection in section.subsections %}
     {% set section = get_section(path=subsection) %}
-    <li><a href='{{ section.permalink }}'>{{ section.title }}</a></li>
+    <a href='{{ section.permalink }}' class='_portfolio-dir-link'>
+      <div class='_portfolio-dir-entry'>
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.description }}</p>
+      </div>
+    </a>
   {% endfor %}
-</ul>
 {% endblock content %}
