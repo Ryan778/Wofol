@@ -8,7 +8,7 @@
   <div id='_page-toc'>
     <p><b>Table of Contents</b></p>
     <ul>
-      <li><a class='_page-toc-item' href='#' onclick='window.scrollTo(0, 0)'>Go to Top</a></li>
+      <li><a class='_page-toc-item' href='#'>Go to Top</a></li>
       {% for h1 in page.toc %}
         <li>
             <a class='_page-toc-item' href='{{ h1.permalink | safe }}'>{{ h1.title }}</a>
@@ -42,8 +42,12 @@
         let hash = ele.href.slice(ele.href.lastIndexOf('#'));
         location.hash = hash.slice(1); 
         toc.style.display = 'none'; 
-        let target = document.querySelector(hash); 
-        window.scrollTo(0, target.offsetTop + 24);
+        if (hash === '#') {
+          window.scrollTo(0, 0); 
+        } else {
+          let target = document.querySelector(hash); 
+          window.scrollTo(0, target.offsetTop + 24);
+        }
       });
     });
   </script>
