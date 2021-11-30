@@ -1,0 +1,8 @@
+._folder-btn {
+  border: none;
+  border-bottom: 1px solid;
+}
+
+._folder-btn-active {
+  background: var(--accent-color-dark) !important;
+}

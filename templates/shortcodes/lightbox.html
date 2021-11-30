@@ -1,10 +1,10 @@
 {% if not width %} 
-  {% set width=180 %}
+  {% set width=300 %}
 {% endif %}
 {% if not height %} 
-  {% set height=180 %}
+  {% set height=240 %}
 {% endif %}
-<a href='{{path | safe}}' data-lightbox='lb2'{% if caption %} data-title='{{caption}}'{% endif %}>
+<a href='{{path | safe}}'{% if class %} class='{{class}}'{% endif %} data-lightbox='lb2{% if class %}-{{class}}{% endif %}'{% if caption %} data-title='{{caption}}'{% endif %}>
   {% if square %}
   <div class='lb-thumbnail' style='background-image: url("{{path | safe}}"); width: {{width}}px; height: {{height}}px'>
     <div class='lb-thumbnail-inner'></div>

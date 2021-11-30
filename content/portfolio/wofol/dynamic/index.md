@@ -60,16 +60,6 @@ Plays music!
 {{/* musicPlayer( src="/music/SunsetBreeze.mp3", name="Sunset Breeze", bk="/bk/sunset.jpg", hue=30) */}} 
 ```
 
-## Gallery
-Separate images/multimedia/anything else by categories. 
-- **Requirements**: `js/plugins/gallery.js` and `css/plugins/gallery.css`
-- **Features**: 
-  - Works with any element
-  - Simply add a class
-- **Use Cases**: 
-  - Separate desktop and mobile screenshots
-  - Separate final product images and mockups/drafts
-
 ## Lightbox
 
 Generate quick, simple, and interactable galleries of images.
@@ -96,6 +86,47 @@ A custom width/height can also be specified.
 {{/* lightbox(path="example-3.jpg", fullwidth=1, height=480) */}} <!-- Use "fullwidth=1" to specify 100% width -->
 ```
 
+## Folders
+Separate images/multimedia/anything else by categories ("folders"). 
+- **Requirements**: `js/plugins/folders.js` and `css/plugins/folders.css`
+- **Features**: 
+  - Works with any element, just add a class name to it! (i.e., `<div class='(className)'> ... </div>`)
+  - Built in support with lightbox (no extra HTML needed, just add `class="classname"`)
+  - Supports icons via the `icon:(iconName)` abbreviation
+- **Use Cases**: 
+  - Separate desktop and mobile screenshots
+  - Separate final product images and mockups/drafts
+  - Categorize different types of images (see example below)
+
+### Sample
+Five images have been put into three "folders", which you can interact with below.
+
+{% folder() %}
+dog, icon:pets Dogs
+cat, icon:local_cafe Cats
+fish, icon:water_drop Fish
+{% end %}
+
+{{ lightbox(path="dog-1.jpg", class="dog") }}
+{{ lightbox(path="dog-2.jpg", class="dog") }}
+{{ lightbox(path="cat-1.jpg", class="cat") }}
+{{ lightbox(path="cat-2.jpg", class="cat") }}
+{{ lightbox(path="fish-1.jpg", class="fish") }}
+
+### Example Markdown
+*Each "folder" is separated by a line, and each line is formatted as `(class name), (visible name)`*
+```
+{%/* folder() */%}
+dog, icon:pets Dogs
+cat, icon:local_cafe Cats
+fish, icon:water_drop Fish
+{%/* end */%}
+
+{{/* lightbox(path="dog-1.jpg", class="dog") */}}
+{{/* lightbox(path="dog-2.jpg", class="dog") */}}
+...
+```
+
 ## Table of Contents
 Always a useful tool for long pages. 
 - **Requirements**: No additional plugins needed, but does require JavaScript to function.
@@ -105,5 +136,5 @@ Always a useful tool for long pages.
   - Sticky popup that stays out of your way when not being used
   - Scroll offset is automaticallly calculated to account for sticky header
 
-### Samples
+### Sample
 Look at the top right corner of your screen to see Table of Contents in action!
