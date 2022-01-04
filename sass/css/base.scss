@@ -115,6 +115,24 @@ button:focus {
   border-color: $accent-color;
 }
 
+table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 2px 6px 4px;
+}
+
+table th {
+  border-bottom: 1px solid $primary-color;
+  background: rgba($box-background, 0.7);
+}
+
+table tbody tr:nth-child(even) {
+  background: rgba($primary-color, 0.08);
+}
+
 // Material icons
 .material-icons {
   vertical-align: text-top;

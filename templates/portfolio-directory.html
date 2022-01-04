@@ -20,19 +20,21 @@
       text-decoration: none;
     }
   </style>
-  <p><a href='..'><span class="material-icons">chevron_left</span>Landing Page</a></p>
-  <h1 class="title">
-    {{ section.title }}
-  </h1>
-  <p>
-  </p>
-  {% for subsection in section.subsections %}
-    {% set section = get_section(path=subsection) %}
-    <a href='{{ section.permalink }}' class='_portfolio-dir-link'>
-      <div class='_portfolio-dir-entry'>
-        <h2>{{ section.title }}</h2>
-        <p>{{ section.description }}</p>
-      </div>
-    </a>
-  {% endfor %}
+  <div id='_page-container'>
+    <p><a href='..'><span class="material-icons">chevron_left</span>Landing Page</a></p>
+    <h1 class="title">
+      {{ section.title }}
+    </h1>
+    <p>
+    </p>
+    {% for subsection in section.subsections %}
+      {% set section = get_section(path=subsection) %}
+      <a href='{{ section.permalink }}' class='_portfolio-dir-link'>
+        <div class='_portfolio-dir-entry'>
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.description }}</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
 {% endblock content %}

@@ -1,7 +1,7 @@
 +++
 title = "Wofol Feature Demonstration"
 sort_by = "date"
-template = "portfolio.html"
+template = "portfolio-list.html"
 page_template = "portfolio-entry.html"
 weight = 0
 

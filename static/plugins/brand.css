@@ -1,0 +1,17 @@
+.brand-icon {
+  transition: filter 0.16s;
+}
+
+.brand-icon:hover {
+  filter: brightness(160%);
+}
+
+.brand-icon svg, .brand-icon-nojs {
+  width: 32px;
+  height: 32px;
+  padding: 0 4px 4px 0px;
+}
+
+.brand-icon-nojs {
+  filter: invert(1);
+}

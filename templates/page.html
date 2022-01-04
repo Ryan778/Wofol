@@ -1,48 +1,28 @@
 {% extends "base.html" %}
 
 {% block base_head %}
-  <link rel='stylesheet' href='/css/portfolio.css'/>
-  <link rel='stylesheet' href='/plugins/musicPlayer.css'/>
-  <noscript><style>.musicWrapper-nolib {display: initial}</style></noscript>
-  <link rel='stylesheet' href='/plugins/folders.css'/>
-  <link rel='stylesheet' href='/plugins/lightbox.css'/>
+<link rel='stylesheet' href='/css/portfolio.css'/>
+<link rel='stylesheet' href='/plugins/musicPlayer.css'/>
+<noscript><style>.musicWrapper-nolib {display: initial}</style></noscript>
+<link rel='stylesheet' href='/plugins/folders.css'/>
+<link rel='stylesheet' href='/plugins/lightbox.css'/>
+<link rel='stylesheet' href='/plugins/brand.css'/>
 {% endblock base_head %}
 
 {% block base_outer %}
 {% endblock base_outer %}
 
 {% block base %}
-  <div id='_page-container-outer'>
-    {% block page_outer %} {% endblock %}
-    {% if page.extra.header %}
-      <div id='_page-headerbk' style='background-image: url("{{ page.extra.header }}")'>
-        <div id='_page-headerbk-inner'>
-          <div id='_page-headerbk-inner-footer'>
-            <h1 class="title">{{ page.title }}</h1>
-            <p class='subtitle'>
-            <b>{{ page.date }}</b>
-            {% if page.description %}
-              <br/><i>{{ page.description }}</i>
-            {% endif %}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div id='_page-container'>
-    {% elif page.title %}
-      <div id='_page-container'>
-      <h1 class="title">{{ page.title }}</h1>
-    {% else %}
-      <div id='_page-container'>
-    {% endif %}
-      {% block content %} {% endblock %}
-    </div>
-  </div>
+<div id='_page-container-outer'>
+{% block page_outer %} {% endblock %}
+{% block content %} {% endblock %}
+</div>
 {% endblock base %}
 
 {% block base_outer_end %}
-  <script defer src='/js/jquery-3.6.0.min.js'></script>
-  <script defer src='/plugins/musicPlayer.js'></script>
-  <script defer src='/plugins/folders.js'></script>
-  <script defer src='/plugins/lightbox.min.js'></script>
+<script defer src='/js/jquery-3.6.0.min.js'></script>
+<script defer src='/plugins/musicPlayer.js'></script>
+<script defer src='/plugins/folders.js'></script>
+<script defer src='/plugins/lightbox.min.js'></script>
+<script defer src='/plugins/brand.js' type='module'></script>
 {% endblock base_outer_end %}

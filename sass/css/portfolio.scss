@@ -73,17 +73,24 @@ ul {
 }
 
 #_page-headerbk-inner {
+  // Header background present
   box-sizing: border-box;
   position: absolute;
   top: 0; 
   left: 0; 
   width: 100%; 
   height: 100%; 
-  background: #00000060;
+  background: #00000090;
   padding: 0.6rem 1.2rem 0.8rem;
 }
 
-#_page-headerbk-inner-footer {
+#_page-header-inner {
+  // No header background
+  background: #00000030;
+  padding: 0.6rem 1.2rem 0.8rem;
+}
+
+#_page-headerbk-inner #_page-header-content {
   position: absolute;
   bottom: 0;
 }
@@ -156,6 +163,62 @@ a:focus .portfolio-grid-item {
   z-index: 1;
 }
 
+// Portfolio entry pages
+
+._page-portfolio-links button {
+  background: none;
+  // border-width: 2px;
+}
+
+a:focus._page-portfolio-link {
+  background: none;
+}
+
+a:focus._page-portfolio-link button {
+  border-color: $accent-color;
+  background:rgba($primary-color, 0.1);
+}
+
+#_page-header-subtitle div {
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#_page-header-subtitle div:not(._page-button-dropdown-wrapper) {
+  border: 1px solid transparent; 
+  padding: 2px 4px;
+  cursor: default;
+}
+
+#_page-header-subtitle div:first-child {
+  margin-left: -4px;
+}
+
+button._page-button-dropdown {
+  background: none; 
+  border: 1px solid transparent; 
+  padding: 2px 4px;
+  margin-bottom: 0;
+  text-align: left;
+  // font-size: 18px;
+}
+
+button._page-button-dropdown:hover, button._page-button-dropdown:focus {
+  background: rgba($primary-color, 0.12);
+  border-color: $accent-color;
+}
+
+button._page-button-dropdown:active {
+  background: rgba($primary-color, 0.24);
+}
+
+._page-label-subtitle {
+  display: block;
+  font-size: 14px;
+  color: rgba($primary-color, 0.7);
+}
+
 // Plugin backgrounds and base styling
 
 .musicWrapper {
@@ -181,6 +244,12 @@ a:focus .portfolio-grid-item {
 @media screen and (max-width: 640px) {
   #portfolio-grid-outer, .grid-outer {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  ._page-portfolio-links {
+    float: right;
   }
 }
 

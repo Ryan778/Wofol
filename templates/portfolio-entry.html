@@ -25,36 +25,50 @@
       {% endfor %}
       </ul>
   </div>
-  <script>
-    document.getElementById('_page-toc-a').addEventListener('click', (e) => {
-      e.preventDefault(); 
-      let toc = document.getElementById('_page-toc'); 
-      if (toc.style.display === 'block') {
-        toc.style.display = 'none'; 
-      } else {
-        toc.style.display = 'block'; 
-      }
-    });
-    document.querySelectorAll('._page-toc-item').forEach((ele) => {
-      let toc = document.getElementById('_page-toc'); 
-      ele.addEventListener('click', (e) => {
-        e.preventDefault();
-        let hash = ele.href.slice(ele.href.lastIndexOf('#'));
-        location.hash = hash.slice(1); 
-        toc.style.display = 'none'; 
-        if (hash === '#') {
-          window.scrollTo(0, 0); 
-        } else {
-          let target = document.querySelector(hash); 
-          window.scrollTo(0, target.offsetTop + 24);
-        }
-      });
-    });
-  </script>
+  <script src='/plugins/toc.js'></script>
 {% endif %}
 {% endblock page_outer %}
 
 {% block content %}
-
-{{ page.content | safe }}
+{% if page.extra.header %}
+<div id='_page-headerbk' style='background-image: url("{{ page.extra.header }}")'>
+  <div id='_page-headerbk-inner'>
+{% else %}
+<div id='_page-header'>
+  <div id='_page-header-inner'>
+{% endif %}
+<div id='_page-header-content'>
+{% if page.title %}
+  <h1 class='title'>{{ page.title }}</h1>
+{% endif %}
+<div id='_page-header-subtitle'>
+{% if page.extra.timeline %}
+  <div class='_page-button-dropdown-wrapper'>
+    <button class='_page-button-dropdown'><span class='_page-label-subtitle'>Last Major Update</span>{{ page.date | replace(from="-",to=".") }}<span class='material-icons'>expand_more</span></button>
+  <!-- {% for entry in page.extra.timeline %}
+    <p><span>{{ entry.date }}</span> {{ entry.description }}</p>
+  {% endfor %} -->
+  </div>
+{% elif page.date %}
+  <div><span class='_page-label-subtitle'>Date</span><b>{{ page.date | replace(from="-",to=".") }}</b></div>
+{% endif %}
+{% if page.extra.status %}
+  <div><span class='_page-label-subtitle'>Status</span>Maintenance</div>
+  {% endif %}
+</div>
+{% if page.description %}
+  <p><i>{{ page.description }}</i></p>
+{% endif %}
+</div> <!-- Subtitle closing div -->
+</div></div>
+<div id='_page-container'>
+  {% if page.extra.link %}
+    <div class='_page-portfolio-links'>
+    {% for link in page.extra.link %}
+      <a href='{{link.href}}' target='_blank' class='_page-portfolio-link'><button tabindex='-1'>{% if link.icon %}<span class='material-icons'>{{ link.icon }}</span> {% endif %}{{ link.text }}</button></a>
+    {% endfor %}
+    </div>
+  {% endif %}
+  {{ page.content | safe }}
+</div>
 {% endblock content %}
