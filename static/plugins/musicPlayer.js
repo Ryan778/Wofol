@@ -35,13 +35,13 @@ const MusicPlayer = {
       if (MusicPlayer.currentElement.dataset.hue) {
         document.documentElement.style.setProperty('--accent-color-light', `hsl(${MusicPlayer.currentElement.dataset.hue}, 100%, 80%)`);
       }
-      MusicPlayer._fade(MusicPlayer.elements.canvas, 1); 
+      MusicPlayer._fade(MusicPlayer.elements.canvas, 1, 'slide', 0.4); 
       this.active = true; 
       this.animationFrame(); 
     }, 
     deactivate: function() {
       document.documentElement.style.removeProperty('--accent-color-light');
-      MusicPlayer._fade(MusicPlayer.elements.canvas, 0); 
+      MusicPlayer._fade(MusicPlayer.elements.canvas, 0, 'slide', 0.4); 
       this.active = false; 
     },
     animationFrame: function() {
@@ -72,30 +72,7 @@ const MusicPlayer = {
       }
     }
   }, 
-  /**
- * Fades in/out the specified element. 
- * @param {object} ele - target element
- * @param {boolean} mode - 1 to show, 0 to hide (default)
- */
-   _fade: async function(ele, mode=0) {
-    return new Promise(r => {
-      if (mode) {
-        ele.style.display = 'block'; 
-        ele.style.animation = `0.4s 1 normal fade-in`; 
-        setTimeout(() => {
-          ele.style.animation = ''; 
-          r(); 
-        }, 400); 
-      } else {
-        ele.style.animation = `0.4s 1 normal fade-out`; 
-        setTimeout(() => {
-          ele.style.animation = ''; 
-          ele.style.display = 'none'; 
-          r(); 
-        }, 400); 
-      }
-    });
-  }, 
+  _fade: _rcore.fade,
   _updateInterval: false, 
   _updatePB: function() {
     let cur = MusicPlayer.audio.currentTime; 

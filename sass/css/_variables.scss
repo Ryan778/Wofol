@@ -18,7 +18,9 @@ $link-color: #82c3ee;
 $link-color-hover: scale-color($link-color, $lightness: 20%); 
 
 :root {
+  --primary-color: #fff;
   --accent-color: #2cb2ff; 
   --accent-color-light: #79ceff; 
   --accent-color-dark: #136492; 
+  --background-color: #1d1d25;
 }

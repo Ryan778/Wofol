@@ -20,6 +20,16 @@
     </a>
     {% endfor %}
   </div>
+  <div>
+    <h2>Timeline</h2>
+    {% for page in section.pages %}
+      {% if page.extra.timeline %}
+        {% for entry in page.extra.timeline %}
+          <p>{{page.title}} | {{entry.date}} | {{entry.description}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
 <script src='/plugins/3dCards.js'></script>
 {% endblock content %}

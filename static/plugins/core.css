@@ -1,0 +1,43 @@
+@keyframes anim-fade {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-zoom {
+  from {
+    transform: scale(0.9) translateX(-5%) translateY(-5%);
+    opacity: 0;
+  } to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-slide {
+  from {
+    transform: translateY(48px); 
+    opacity: 0;
+  } to {
+    transform: translateY(0px); 
+    opacity: 1;
+  }
+}
+
+._dropdown {
+  display: none;
+  position: absolute;
+  background: var(--background-color);
+  padding: 0;
+  cursor: default;
+  z-index: 2;
+  border: 1px solid var(--primary-color);
+  box-shadow: 2px 2px 4px var(--background-color);
+}
+
+._dropdown h3 {
+  margin-top: 0;
+  margin-left: 6px;
+}

@@ -2,6 +2,7 @@
 
 {% block base_head %}
 <link rel='stylesheet' href='/css/portfolio.css'/>
+<link rel='stylesheet' href='/plugins/core.css'/>
 <link rel='stylesheet' href='/plugins/musicPlayer.css'/>
 <noscript><style>.musicWrapper-nolib {display: initial}</style></noscript>
 <link rel='stylesheet' href='/plugins/folders.css'/>
@@ -20,6 +21,7 @@
 {% endblock base %}
 
 {% block base_outer_end %}
+<script defer src='/plugins/core.js'></script>
 <script defer src='/js/jquery-3.6.0.min.js'></script>
 <script defer src='/plugins/musicPlayer.js'></script>
 <script defer src='/plugins/folders.js'></script>

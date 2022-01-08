@@ -44,17 +44,27 @@
 <div id='_page-header-subtitle'>
 {% if page.extra.timeline %}
   <div class='_page-button-dropdown-wrapper'>
-    <button class='_page-button-dropdown'><span class='_page-label-subtitle'>Last Major Update</span>{{ page.date | replace(from="-",to=".") }}<span class='material-icons'>expand_more</span></button>
-  <!-- {% for entry in page.extra.timeline %}
-    <p><span>{{ entry.date }}</span> {{ entry.description }}</p>
-  {% endfor %} -->
+    <button class='_page-button-dropdown _dropdown-trigger' data-target='_page-header-timeline-dropdown'><span class='_page-label-subtitle'>Last Major Update</span>{{ page.date | replace(from="-",to=".") }}<span class='material-icons'>expand_more</span></button>
+  </div>
+  <div id='_page-header-timeline-dropdown' class='_dropdown' style='left: -4px; top: 72px'>
+    <h3>Version History</h3>
+    <table style='font-size: 16px'>
+      <thead>
+        <tr><th>Date</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        {% for entry in page.extra.timeline %}
+        <tr><td>{{ entry.date | replace(from="-",to=".") }}</td><td>{{ entry.description }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% elif page.date %}
-  <div><span class='_page-label-subtitle'>Date</span><b>{{ page.date | replace(from="-",to=".") }}</b></div>
+  <div><span class='_page-label-subtitle'>Date</span>{{ page.date | replace(from="-",to=".") }}</div>
 {% endif %}
 {% if page.extra.status %}
   <div><span class='_page-label-subtitle'>Status</span>Maintenance</div>
-  {% endif %}
+{% endif %}
 </div>
 {% if page.description %}
   <p><i>{{ page.description }}</i></p>

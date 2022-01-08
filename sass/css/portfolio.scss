@@ -16,7 +16,7 @@
   backdrop-filter: blur(12px);
 }
 
-#_page-container {
+#_page-container, ._container {
   padding: 0.6rem 1.2rem 0.8rem;
 }
 
@@ -179,13 +179,13 @@ a:focus._page-portfolio-link button {
   background:rgba($primary-color, 0.1);
 }
 
-#_page-header-subtitle div {
+#_page-header-subtitle div:not(._dropdown) {
   font-size: 18px;
   display: inline-block;
   vertical-align: bottom;
 }
 
-#_page-header-subtitle div:not(._page-button-dropdown-wrapper) {
+#_page-header-subtitle div:not(._page-button-dropdown-wrapper):not(._dropdown) {
   border: 1px solid transparent; 
   padding: 2px 4px;
   cursor: default;
